@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import MainPage from './containers/mainpage';
+import Controller from './containers/controller';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <MainPage> </MainPage>
+          <Controller> </Controller>
         </header>
       </div>
     );
