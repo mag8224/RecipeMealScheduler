@@ -119,9 +119,9 @@ class RecipeBookPage extends React.Component {
               <Divider horizontal>Recipes</Divider>
               <Element style={{
                 position: 'relative',
-            height: '200px',
+            height: '400px',
             overflow: 'scroll',
-            marginBottom: '100px'}}>
+            }}>
               {this.allRecipes()}
               </Element>
             </div>
