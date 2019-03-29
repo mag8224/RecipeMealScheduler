@@ -2,6 +2,8 @@ import React from 'react';
 //import ReactDOM from 'react-dom';
 import {Input, Table, Divider, Button, Icon } from 'semantic-ui-react';
 import { Element } from 'react-scroll';
+import PropTypes from 'prop-types';
+
 
 
 let recipeCategories = [
@@ -101,9 +103,10 @@ class RecipeBookPage extends React.Component {
     render() {
       return (
         <div name="RecipeBookPage">
-            <h2>Your Recipe Book</h2>
+            <h2 style={{float:"left"}}>Your Recipe Book</h2>
+            <Button positive style={{float:"right"}} onClick={() => this.props.change("add")}>Add Recipe</Button>
             <div>
-              <Input placeholder="Search by (Ingredient, Title, Category)..."  />
+              <Input style={{float: "clear", width:"100%"}} placeholder="Search by (Ingredient, Title, Category)..."  />
               <Table inverted color="violet">
                 <Table.Header >
                   <Table.Row >
@@ -128,6 +131,11 @@ class RecipeBookPage extends React.Component {
         </div>
       );
     }
+  }
+
+  RecipeBookPage.propTypes = {
+    change: PropTypes.func,
+
   }
   
 export default RecipeBookPage;

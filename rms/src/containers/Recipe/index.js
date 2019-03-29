@@ -1,23 +1,33 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
 import RecipeBookPage from '../../components/RecipeBookPage';
+import AddRecipe from '../../components/AddRecipe';
+
 
 class Recipe extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            recipeView: "book"
+            recipeView: "book",
         };
         this.displayRecipe = this.displayRecipe.bind(this);
+        this.change = this.change.bind(this);
     }
     displayRecipe(){
         console.log(this.state);
         if(this.state.recipeView === "book"){
-            return <RecipeBookPage></RecipeBookPage>;
+            return <RecipeBookPage change={(m) => this.change(m)}></RecipeBookPage>;
+        }
+        else if (this.state.recipeView === "add"){
+            return <AddRecipe></AddRecipe>;
         }
         else {
             return <h4>Some other page</h4>;
         }
+    }
+    change(mode) {
+        this.setState({recipeView: mode});
+
     }
     render() {
       return (
