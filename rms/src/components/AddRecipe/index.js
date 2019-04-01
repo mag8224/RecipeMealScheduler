@@ -1,7 +1,8 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
-import { Table, Input, List,  TextArea, Button } from 'semantic-ui-react';
+import { Table, Input, TextArea, Button } from 'semantic-ui-react';
 
+import PropTypes from 'prop-types';
 
 
 class AddRecipe extends React.Component {
@@ -20,25 +21,65 @@ class AddRecipe extends React.Component {
             tmpIng: {
                 name: "",
                 amt: "",
-                measure: ""
+                measure: "tsp"
             }
         }
         this.changeHandler = this.changeHandler.bind(this);
         this.errorChecker = this.errorChecker.bind(this);
         this.displaySteps = this.displaySteps.bind(this);
         this.displayIngredients = this.displayIngredients.bind(this);
+        this.submitRecipe = this.submitRecipe.bind(this);
 
     }
-    displaySteps() {
+    submitRecipe() {
+        let errors = false;
+        if (this.state.title === "") {
+            errors = true;
+        }
+        if(this.state.serving == 0) {
+            errors = true;
+        }
+        if(this.state.time === "") {
+            errors =true;
+        }
+        if(this.state.ingredients.length == 0) {
+            errors = true;
+        }
+        if (this.state.steps.length == 0) {
+            errors = true;
+        }
+        
+        
+        if(!errors) {
+            alert("Saved Recipe");
+            let r = {
+                name: this.state.title,
+                time: this.state.time,
+                servings: this.state.serving,
+                ingredients: this.state.ingredients,
+                directions: this.state.steps,
+                notes: this.state.notes,
+                category: "Dinner",
+            };
+            this.props.addRecipe(r);
+            this.props.change("book");
 
+        }
+        else{
+            alert("Recipe can not be saved");
+        }
+    }
+    displaySteps() {
+        return this.state.steps.map((i, ind) => <Table.Row><Table.Cell>{ind + 1}.{i}</Table.Cell><Table.Cell><Button circular negative icon="trash"></Button><Button circular primary icon="edit"></Button></Table.Cell></Table.Row>)
     }
     
     displayIngredients() {
-        return this.state.ingredients.map(i => <Table.Row><Table.Cell>{i.name}</Table.Cell><Table.Cell><Button circular secondary icon="trash"></Button><Button circular primary icon="edit"></Button></Table.Cell></Table.Row>)
+        console.log("display ingredients");
+        return this.state.ingredients.map(i => <Table.Row><Table.Cell>{i.amt} {i.measure}</Table.Cell><Table.Cell>{i.name}</Table.Cell><Table.Cell><Button circular negative icon="trash"></Button><Button circular primary icon="edit"></Button></Table.Cell></Table.Row>)
     }
 
     changeHandler(e) {
-        console.log(e.target);
+       // console.log(e.target);
         if(this.errorChecker(e.target.value, e.target.name) === true) {
             this.setState({
                 [e.target.name]:e.target.value
@@ -81,9 +122,13 @@ class AddRecipe extends React.Component {
     render() {
       return (
         <div >
-          <h1>New Recipe</h1>
-            <div >
-                
+            <div>
+          <h1 style={{ float: "left"}}>New Recipe</h1>
+          <Button style={{float:"right"}} circular icon="arrow left" onClick={() => this.props.change("book")}></Button>
+
+          </div>
+            <div>
+                <Input disabled style={{float: "clear", width: "100%"}} />
                 <Input style={{padding: "10px"}} name="title" label="Title" placeholder="Recipe Title" onChange={this.changeHandler}></Input>
                 <Input style={{padding: "10px"}} name="serving" label="Serving Size" type="number" onChange={this.changeHandler}></Input>
                 <Input error={this.state.timeError} style={{padding: "10px"}} label="Time" name="time" placeholder="HH:MM" onChange={this.changeHandler}></Input>
@@ -130,14 +175,15 @@ class AddRecipe extends React.Component {
                                 }} >
                             <input />
                             <Button onClick={() => {
-                                let tmpArray = this.state.ingredients.slice();
+                                console.log(this.state.ingredients, this.state.tmpIng);
+                                let tmpArray = this.state.ingredients;
                                 tmpArray.push(this.state.tmpIng);          
-                                this.setState({ingredients: tmpArray, tmpIng: {}});
+                                this.setState({ingredients: tmpArray, tmpIng: {amt: "", measure: "tsp", name: ""}});
                             }}>Add</Button>
                             </Input>
                             </Table.Cell>
                         </Table.Row>
-                        {this.displayIngredients}
+                        {this.displayIngredients()}
                     </Table.Body>
                 </Table>
             </div>
@@ -162,23 +208,22 @@ class AddRecipe extends React.Component {
                             }}>Add</Button>
                             </Input> </Table.Cell>
                         </Table.Row>
-                        <Table.Row>
-                            <Table.Cell><List as="ol">
-                                <List.Item as="li" value="1">Step directions blah blah blah blah blah</List.Item>
-                            </List></Table.Cell>
-                            <Table.Cell><Button circular negative icon="trash"></Button><Button circular icon="edit" primary color="blue"></Button></Table.Cell>
-                        </Table.Row>
+                        {this.displaySteps()}
                     </Table.Body>
                 </Table>
             </div>
             <div style={{marginTop:"15px"}}>
                 {/**Additional Notes */}
-                <TextArea rows={5} style={{width:"70%"}} placeholder="Additional Notes" />
+                <TextArea name="notes" rows={5} style={{width:"70%"}} placeholder="Additional Notes" onChange={this.changeHandler}/>
             </div>
-            <Button onClick={() =>console.log(this.state)} positive>Submit</Button>
+            <Button onClick={this.submitRecipe} positive>Submit</Button>
         </div>
       );
     }
+  }
+  AddRecipe.propTypes = {
+    addRecipe: PropTypes.func,
+    change: PropTypes.func,
   }
   
 export default AddRecipe;
