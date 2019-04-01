@@ -17,7 +17,7 @@ class Recipe extends React.Component {
               ingredients: ["Chicken", "Cheese", "Ranch"],
               directions: ["Prep Chicken", "Cook Chicken", "Plate Chicken"],
               servings: 3,
-              time: "1:40",
+              time: "01:40",
               notes: "10/10 rating",
               
             },
@@ -31,7 +31,7 @@ class Recipe extends React.Component {
                       "Flip the sandwich over when bottom is golden brown", 
                       "Cook until bottom side is also golden brown", "Serve with hot tomato soup"],
               servings: 1,
-              time: "0:20",
+              time: "00:20",
               notes: "Good, quick food to eat"
             
             }],
@@ -55,7 +55,7 @@ class Recipe extends React.Component {
             return <AddRecipe change={(m) => this.change(m)} addRecipe={(r) => this.addRecipe(r)}></AddRecipe>;
         }
         else if(this.state.recipeView === "view") {
-            return <ViewRecipe recipe={this.state.r} />
+            return <ViewRecipe recipe={this.state.r} change={(m) => this.change(m)} />
         }
         else {
             return <h4>Some other page</h4>;
