@@ -13,7 +13,16 @@ class WeekEntry extends React.Component {
   }
 
   render() {
-
+    <div class="Week-entry">
+      <h4>{this.props.entryName}</h4>
+      <span>{this.props.entryLabel}</span>
+      <div>
+        <span>Serves</span>
+        <Input></Input>
+      </div>
+      <Button>Show Recipe</Button>
+      <Button>Remove</Button>
+    </div>
   }
 }
 

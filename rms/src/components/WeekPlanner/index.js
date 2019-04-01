@@ -13,7 +13,7 @@ class WeekPanner extends React.Component {
   }
 
   render() {
-
+    
   }
 }
 

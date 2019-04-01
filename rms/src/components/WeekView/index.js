@@ -27,7 +27,23 @@ class WeekView extends React.Component {
   }
 
   render() {
+    const entries = Object.keys(this.state.week).map((key) =>
+      <div>
+        <h3>{key}</h3>
+        <div>{this.state.week[key]}</div>
+      </div>
+    );
 
+    return (
+      <div>
+        <div>
+          <Button>Previous</Button>
+          <span>March 24-31</span>
+          <Button>Next</Button>
+        </div>
+        <div>{entries}</div>
+      </div>
+    );
   }
 }
 
