@@ -25,9 +25,9 @@ class MealPlanner extends React.Component {
       <MealItem recipe={r}/>
     );
     return (
-      <div>
+      <div class="MealPlanner">
         <h3>This week's meals</h3>
-        <div>
+        <div class="MealPlanner-list">
           {items}
         </div>
       </div>

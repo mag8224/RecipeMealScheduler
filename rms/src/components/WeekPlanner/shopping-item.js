@@ -17,7 +17,7 @@ class ShoppingItem extends React.Component {
     return (
       <div class="ShoppingPlanner-item">
         <span class="ShoppingPanner-item-destination">{this.props.destination}</span>
-          <select value={this.props.day}>
+          <select class="ShoppingPlanner-item-day" value={this.props.day}>
             <option>Tuesday</option>
             <option>Wednesday</option>
             <option>Thursday</option>

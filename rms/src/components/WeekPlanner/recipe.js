@@ -29,14 +29,14 @@ class RecipePlanner extends React.Component {
       <RecipeItem recipe={this.state.recipes[i]}/>
     );
     return (
-      <div>
+      <div class="RecipePlanner">
         <h3>Add suggested recipes</h3>
-        <div>
+        <div class="RecipePlanner-list">
           {suggestedItems}
         </div>
         <h3>Or search your recipe book</h3>
-        <div>
-          <Input placeholder="Search"></Input>
+        <div class="RecipePlanner-list">
+          <Input class="RecipePlanner-search" placeholder="Search"></Input>
           {items}
         </div>
       </div>

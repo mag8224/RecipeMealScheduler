@@ -14,10 +14,10 @@ class RecipeItem extends React.Component {
 
   render() {
     return(
-      <div>
-        <img src={this.props.recipe.img}/>
-        <span>{this.props.recipe.name}</span>
-        <Button>Add to Planner</Button>
+      <div class="RecipePlanner-item">
+        <img class="RecipePlanner-item-img" src={this.props.recipe.img}/>
+        <span class="RecipePlanner-item-name">{this.props.recipe.name}</span>
+        <Button class="RecipePlanner-item-button">Add to Planner</Button>
       </div>
     );
   }

@@ -17,7 +17,7 @@ class WeekPlanner extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="Week-planner">
         <h2>Step 1: What's in your Pantry?</h2>
         <PantryPlanner />
         <h2>Step 2: What do you want to eat this week?</h2>
