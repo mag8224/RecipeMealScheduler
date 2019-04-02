@@ -12,3 +12,135 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* CALENDAR PAGE STYLES */
+
+.Calendar {
+  border: 2px solid black;
+}
+.Calendar-nav {
+  align-items: center;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+.Calendar-nav button {
+  margin: 0;
+}
+
+.Week-view {
+  display: flex;
+}
+.Week-day {
+  flex-shrink: 0;
+  flex-grow: 1;
+  text-align: center;
+  max-width: 14.2857%;
+}
+.Week-day h2 {
+  margin: 0;
+  font-size: 18px;
+  border-bottom: 2px solid black;
+}
+.Week-day + .Week-day {
+  border-left: 2px solid black;
+}
+.Week-entry {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.Week-entry-portion {
+  margin-top: 12px;
+}
+.Week-entry + .Week-entry {
+  border-top: 2px solid black;
+}
+.Week-entry:not(:hover) {
+  height: 40px;
+  background-color: lightgrey;
+}
+.Week-entry button {
+  margin: 8px 0 0 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.Week-entry input {
+  width: 60px;
+}
+.Week-entry h4 {
+  margin: 0;
+}
+
+.PantryPlanner-form {
+  align-items: center;
+  display: flex;
+}
+.PantryPlanner-form-inputs {
+  display: flex;
+}
+.PantryPlanner-list {
+  border: 2px solid black;
+}
+.PantryPlanner-item {
+  display: flex;
+  align-items: center;
+}
+.PantryPlanner-item-name {
+  margin-right: auto;
+}
+.PantryPlanner-item + .PantryPlanner-item {
+  border-top: 2px solid black;
+}
+
+.RecipePlanner-list {
+  border: 2px solid black;
+}
+.RecipePlanner-item {
+  display: flex;
+  align-items: center;
+}
+.RecipePlanner-item-name {
+  margin-right: auto;
+}
+.RecipePlanner-item + .RecipePlanner-item {
+  border-top: 2px solid black;
+}
+
+.MealPlanner-list {
+  border: 2px solid black;
+}
+.MealPlanner-item {
+  display: flex;
+  align-items: center;
+}
+.MealPlanner-item-name {
+  margin-right: auto;
+}
+.MealPlanner-item + .MealPlanner-item {
+  border-top: 2px solid black;
+}
+
+.ShoppingPlanner-form {
+  align-items: center;
+  display: flex;
+}
+.ShoppingPlanner-form-inputs {
+  align-items: baseline;
+  display: flex;
+}
+.ShoppingPlanner-list {
+  border: 2px solid black;
+}
+.ShoppingPlanner-item {
+  display: flex;
+  align-items: center;
+}
+.ShoppingPlanner-item-destination {
+  margin-right: auto;
+}
+.ShoppingPlanner-item + .ShoppingPlanner-item {
+  border-top: 2px solid black;
+}
+
+/* END */
