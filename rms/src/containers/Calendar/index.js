@@ -11,6 +11,7 @@ class Calendar extends React.Component {
         <div >
           <h1>Your Calendar</h1>
           <WeekView/>
+          <QuickAdd/>
         </div>
       );
     }

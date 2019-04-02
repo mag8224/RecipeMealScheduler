@@ -14,7 +14,7 @@ class QuickAddItem extends React.Component {
 
   render() {
     return(<div>
-      <img/>
+      <img src={this.props.recipe.img}/>
       <span>{this.props.recipe.name}</span>
       <Input placeholder="Label (e.g. Lunch or Snack)"></Input>
       <select>
@@ -26,7 +26,7 @@ class QuickAddItem extends React.Component {
         <option>Saturday</option>
         <option>Sunday</option>
       </select>
-      <input type="checkbox"></input>
+      <Input type="checkbox"></Input>
       <label>Add to Planner</label>
     </div>);
   }

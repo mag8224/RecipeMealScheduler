@@ -33,7 +33,7 @@ class WeekView extends React.Component {
         return (<WeekEntry entryName={entry.name} entryLabel={entry.label}/>);
       });
       return (
-        <div>
+        <div class="Week-day">
           <h2>{key}</h2>
           {entries}
         </div>
@@ -41,13 +41,13 @@ class WeekView extends React.Component {
     });
 
     return (
-      <div>
-        <div>
+      <div class="Calendar">
+        <div class="Calendar-nav">
           <Button>Previous</Button>
           <span>March 24-31</span>
           <Button>Next</Button>
         </div>
-        <div>{days}</div>
+        <div class="Week-view">{days}</div>
       </div>
     );
   }

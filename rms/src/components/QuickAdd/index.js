@@ -10,7 +10,11 @@ class QuickAdd extends React.Component {
     super(props);
 
     this.state = {
-      recipes: [],
+      recipes: [
+        {name: "Grilled Cheese", img: ""},
+        {name: "Greek Omlette", img: ""},
+        {name: "Chicken Curry", img: ""}
+      ],
       selected: []
     };
 
