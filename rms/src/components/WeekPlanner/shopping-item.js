@@ -9,15 +9,20 @@ class ShoppingItem extends React.Component {
     super(props);
 
     this.state = {
-      count: this.props.count
+      day: this.props.day
     }
+  }
+
+  handleChange(event) {
+    this.setState({day: event.target.value});
   }
 
   render() {
     return (
       <div class="ShoppingPlanner-item">
-        <span class="ShoppingPanner-item-destination">{this.props.destination}</span>
-          <select class="ShoppingPlanner-item-day" value={this.props.day}>
+        <span class="ShoppingPlanner-item-destination">{this.props.destination}</span>
+          <select class="ShoppingPlanner-item-day" value={this.state.day} onChange={this.handleChange.bind(this)}>
+            <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>
             <option>Thursday</option>

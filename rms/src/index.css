@@ -72,4 +72,75 @@ code {
   margin: 0;
 }
 
+.PantryPlanner-form {
+  align-items: center;
+  display: flex;
+}
+.PantryPlanner-form-inputs {
+  display: flex;
+}
+.PantryPlanner-list {
+  border: 2px solid black;
+}
+.PantryPlanner-item {
+  display: flex;
+  align-items: center;
+}
+.PantryPlanner-item-name {
+  margin-right: auto;
+}
+.PantryPlanner-item + .PantryPlanner-item {
+  border-top: 2px solid black;
+}
+
+.RecipePlanner-list {
+  border: 2px solid black;
+}
+.RecipePlanner-item {
+  display: flex;
+  align-items: center;
+}
+.RecipePlanner-item-name {
+  margin-right: auto;
+}
+.RecipePlanner-item + .RecipePlanner-item {
+  border-top: 2px solid black;
+}
+
+.MealPlanner-list {
+  border: 2px solid black;
+}
+.MealPlanner-item {
+  display: flex;
+  align-items: center;
+}
+.MealPlanner-item-name {
+  margin-right: auto;
+}
+.MealPlanner-item + .MealPlanner-item {
+  border-top: 2px solid black;
+}
+
+.ShoppingPlanner-form {
+  align-items: center;
+  display: flex;
+}
+.ShoppingPlanner-form-inputs {
+  align-items: baseline;
+  display: flex;
+}
+.ShoppingPlanner-list {
+  border: 2px solid black;
+}
+.ShoppingPlanner-item {
+  display: flex;
+  align-items: center;
+}
+.ShoppingPlanner-item-destination {
+  margin-right: auto;
+}
+.ShoppingPlanner-item + .ShoppingPlanner-item {
+  border-top: 2px solid black;
+}
+
 /* END */

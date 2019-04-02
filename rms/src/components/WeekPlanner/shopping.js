@@ -18,6 +18,14 @@ class ShoppingPlanner extends React.Component {
 
   }
 
+  handleDay(event) {
+    this.setState({form:{day: event.target.value}});
+  }
+
+  handleDestination(event) {
+    this.setState({form:{destination: event.target.value}});
+  }
+
   render() {
     const items = this.state.items.map(item => {
       return (
@@ -29,9 +37,10 @@ class ShoppingPlanner extends React.Component {
         <div class="ShoppingPlanner-form">
           <span>Add item to Shopping</span>
           <div class="ShoppingPlanner-form-inputs">
-            <Input placeholder="Destination" value={this.state.form.destination}></Input>
+            <Input onChange={this.handleDestination.bind(this)} placeholder="Destination" value={this.state.form.destination}></Input>
             <span>On</span>
-            <select value={this.state.form.day}>
+            <select onChange={this.handleDay.bind(this)} value={this.state.form.day}>
+              <option>Monday</option>
               <option>Tuesday</option>
               <option>Wednesday</option>
               <option>Thursday</option>

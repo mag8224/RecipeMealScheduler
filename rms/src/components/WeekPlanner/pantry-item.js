@@ -13,12 +13,16 @@ class PantryItem extends React.Component {
     }
   }
 
+  handleChange(event) {
+    this.setState({count: event.target.value});
+  }
+
   render() {
     return (
       <div class="PantryPlanner-item">
-        <span class="PantryPanner-item-name">{this.props.itemName}</span>
-        <Input type="number" value={this.state.count} class="PantryPanner-item-count"/>
-        <span class="PantryPanner-item-units">{this.props.units}</span>
+        <span class="PantryPlanner-item-name">{this.props.itemName}</span>
+        <Input type="number" value={this.state.count} onChange={this.handleChange.bind(this)} class="PantryPanner-item-count"/>
+        <span class="PantryPlanner-item-units">{this.props.units}</span>
       </div>
     );
   }

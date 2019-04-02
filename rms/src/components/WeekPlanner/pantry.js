@@ -16,7 +16,18 @@ class PantryPlanner extends React.Component {
         units: ""
       }
     };
+  }
 
+  handleName(event) {
+    this.setState({form:{name: event.target.value}});
+  }
+
+  handleCount(event) {
+    this.setState({form:{count: event.target.value}});
+  }
+
+  handleUnits(event) {
+    this.setState({form:{units: event.target.value}});
   }
 
   render() {
@@ -30,9 +41,9 @@ class PantryPlanner extends React.Component {
         <div class="PantryPlanner-form">
           <span>Add item to Pantry</span>
           <div class="PantryPlanner-form-inputs">
-            <Input placeholder="Ingredient Name" value={this.state.form.name}></Input>
-            <Input type="number" value={this.state.form.count}></Input>
-            <Input placeholder="Units" value={this.state.form.units}></Input>
+            <Input onChange={this.handleName.bind(this)} placeholder="Ingredient Name" value={this.state.form.name}></Input>
+            <Input onChange={this.handleCount.bind(this)} type="number" value={this.state.form.count}></Input>
+            <Input onChange={this.handleUnits.bind(this)} placeholder="Units" value={this.state.form.units}></Input>
           </div>
           <Button>Add to Pantry</Button>
         </div>

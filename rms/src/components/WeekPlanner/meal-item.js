@@ -8,8 +8,19 @@ class MealItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      day: "Monday",
+      label: ""
+    };
 
+  }
+
+  handleDay(event) {
+    this.setState({day: event.target.value});
+  }
+
+  handleLabel(event) {
+    this.setState({label: event.target.value});
   }
 
   render() {
@@ -17,8 +28,8 @@ class MealItem extends React.Component {
       <div class="MealPlanner-item">
         <img class="MealPlanner-item-img" src={this.props.recipe.img}/>
         <span class="MealPlanner-item-name">{this.props.recipe.name}</span>
-        <Input class="MealPlanner-item-label" placeholder="Label (e.g. Lunch or Snack)"></Input>
-        <select class="MealPlanner-item-day">
+        <Input value={this.state.label} onChange={this.handleLabel.bind(this)} class="MealPlanner-item-label" placeholder="Label (e.g. Lunch or Snack)"></Input>
+        <select value={this.state.day} onChange={this.handleDay.bind(this)} class="MealPlanner-item-day">
           <option>Monday</option>
           <option>Tuesday</option>
           <option>Wednesday</option>
