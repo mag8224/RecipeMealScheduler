@@ -19,9 +19,9 @@ class ShoppingItem extends React.Component {
 
   render() {
     return (
-      <div class="ShoppingPlanner-item">
-        <span class="ShoppingPlanner-item-destination">{this.props.destination}</span>
-          <select class="ShoppingPlanner-item-day" value={this.state.day} onChange={this.handleChange.bind(this)}>
+      <div class="Planner-item">
+        <span class="Planner-item-destination">{this.props.destination}</span>
+          <select class="Planner-item-day" value={this.state.day} onChange={this.handleChange.bind(this)}>
             <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>

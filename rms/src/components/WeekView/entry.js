@@ -19,7 +19,7 @@ class WeekEntry extends React.Component {
         <span>{this.props.entryLabel}</span>
         <div class="Week-entry-portion">
           <span>Serves</span>
-          <Input></Input>
+          <Input type="number"></Input>
         </div>
         <Button>Show Recipe</Button>
         <Button>Remove</Button>

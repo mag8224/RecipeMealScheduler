@@ -17,10 +17,10 @@ class RecipeItem extends React.Component {
 
   render() {
     return(
-      <div class="RecipePlanner-item">
-        <img class="RecipePlanner-item-img" src={this.props.recipe.img}/>
-        <span class="RecipePlanner-item-name">{this.props.recipe.name}</span>
-        <Button class="RecipePlanner-item-button" onClick={this.handleButton.bind(this)}>Add to Planner</Button>
+      <div class="Planner-item">
+        <img class="Planner-item-img" src={this.props.recipe.img}/>
+        <span class="Planner-item-name">{this.props.recipe.name}</span>
+        <Button class="Planner-item-button" onClick={this.handleButton.bind(this)}>Add to Planner</Button>
       </div>
     );
   }

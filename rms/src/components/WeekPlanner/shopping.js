@@ -33,13 +33,13 @@ class ShoppingPlanner extends React.Component {
       );
     });
     return (
-      <div class="ShoppingPlanner">
-        <div class="ShoppingPlanner-form">
-          <span>Add item to Shopping</span>
-          <div class="ShoppingPlanner-form-inputs">
+      <div class="Planner">
+        <div class="Planner-form">
+          <span class="Planner-form-label">Add shopping trip</span>
+          <div class="Planner-form-inputs">
             <Input onChange={this.handleDestination.bind(this)} placeholder="Destination" value={this.state.form.destination}></Input>
-            <span>On</span>
-            <select onChange={this.handleDay.bind(this)} value={this.state.form.day}>
+            <span class="Planner-form-on">On</span>
+            <select class="Planner-form-select" onChange={this.handleDay.bind(this)} value={this.state.form.day}>
               <option>Monday</option>
               <option>Tuesday</option>
               <option>Wednesday</option>
@@ -51,7 +51,7 @@ class ShoppingPlanner extends React.Component {
           </div>
           <Button>Add shopping trip</Button>
         </div>
-        <div class="ShoppingPlanner-list">
+        <div class="Planner-list">
           {items}
         </div>
       </div>
