@@ -5,6 +5,7 @@ import { Button } from 'semantic-ui-react';
 class Shopping extends React.Component {
     render() {
       return (
+        <div>
         <div >
               <h1>Your Shopping Trip</h1>
           
@@ -23,6 +24,7 @@ class Shopping extends React.Component {
               </ul>          
         </div>
         <Button><div title="Unchecked undeleted items will be added to next shopping trip">Complete Trip</div></Button>
+        </div>
       );
     }
   }

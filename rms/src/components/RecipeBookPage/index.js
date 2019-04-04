@@ -13,19 +13,14 @@ let recipeCategories = [
   "Pork",
   "Red Meat",
   "Appetizers",
-  "Bakery",
   "Dessert",
   "Casseroles",
-  "Sauces",
   "Pasta",
-  "Sandwiches",
-  "Drinks",
   "Soups",
   "Dinner",
   "Lunch",
   "Breakfast",
-  "Bowls",
-  "Holiday",
+  
   "Other",
 ]
 
@@ -40,29 +35,29 @@ class RecipeBookPage extends React.Component {
     this.allRecipes = this.allRecipes.bind(this);
   }
   resultsRecipeTable() {
-    return this.state.recipes.map(r => <Table.Row><Table.Cell ><button style={{border:"0px", backgroundColor:"#2185d0", color: "white", textDecoration: "underline" }} onClick={() => this.props.viewRecipe(r)}>{r.name}</button></Table.Cell>
+    return this.state.recipes.map(r => <Table.Row><Table.Cell ><button style={{border:"0px", backgroundColor:"#14A0A0", color: "white", textDecoration: "underline" }} onClick={() => this.props.viewRecipe(r)}>{r.name}</button></Table.Cell>
                       <Table.Cell style={{float:"right"}}><Button icon circular color="blue"><Icon name="edit"></Icon></Button><Button circular color="red" icon><Icon name="trash"></Icon></Button></Table.Cell>
 
     </Table.Row>);
   }
   allRecipes() {
     let elements = recipeCategories.map((category) => {
-    let header = (<Table inverted color="violet">
+    let header = (<Table inverted color="teal">
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>{category}</Table.HeaderCell>
+            <Table.HeaderCell style={{height: "5px", margins: "5px", padding: "5px"}}>{category}</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
       </Table>);
 
     let recipeTable = ( 
-      <Table inverted color="blue">
+      <Table inverted color="teal">
         {this.state.recipes.map(r => {
         if (r.category === category) {
           return (
             <Table.Row>
               <Table.Cell>
-                <button style={{border:"0px", backgroundColor:"#2185d0", color: "white", textDecoration: "underline" }} onClick={() => this.props.viewRecipe(r)}>{r.name}</button>
+                <button style={{border:"0px", backgroundColor:"#14A0A0", color: "white" }} onClick={() => this.props.viewRecipe(r)}>{r.name}</button>
               </Table.Cell>
               <Table.Cell style={{float:"right"}}>
               <Button icon circular color="blue"><Icon name="edit"></Icon></Button><Button circular color="red" icon><Icon name="trash"></Icon></Button>
@@ -86,14 +81,14 @@ class RecipeBookPage extends React.Component {
             <Button positive style={{float:"right"}} onClick={() => this.props.change("add")}>Add Recipe</Button>
             <div>
               <Input style={{float: "clear", width:"100%"}} placeholder="Search by (Ingredient, Title, Category)..."  />
-              <Table inverted color="violet">
+              <Table inverted color="teal">
                 <Table.Header >
                   <Table.Row >
                     <Table.HeaderCell>Results</Table.HeaderCell>
                   </Table.Row>
                 </Table.Header>
               </Table>
-              <Table celled inverted color="blue">
+              <Table celled inverted color="teal">
                 <Table.Row>
                   {this.resultsRecipeTable()}
                 </Table.Row>
