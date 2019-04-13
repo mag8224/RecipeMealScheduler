@@ -1,6 +1,6 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
-import { Button, Grid, Table, Popup, Tab } from 'semantic-ui-react';
+import { Button, Grid, Table, Popup } from 'semantic-ui-react';
 
 class MainPage extends React.Component {
     render() {
