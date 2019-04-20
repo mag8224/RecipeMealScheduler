@@ -18,13 +18,12 @@ class WeekPlanner extends React.Component {
   render() {
     return (
       <div class="Week-planner">
-        <h2>Step 1: What's in your Pantry?</h2>
-        <PantryPlanner />
-        <h2>Step 2: What do you want to eat this week?</h2>
+        
+        <h2>Step 1: What do you want to eat this week?</h2>
         <RecipePlanner />
-        <h2>Step 3: Organize your meals</h2>
+        <h2>Step 2: Organize your meals</h2>
         <MealPlanner />
-        <h2>Step 4: When do you want to go shopping?</h2>
+        <h2>Step 3: When do you want to go shopping?</h2>
         <ShoppingPlanner />
         <Button>Create meal plan</Button>
       </div>

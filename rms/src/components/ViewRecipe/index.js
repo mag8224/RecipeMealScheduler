@@ -1,6 +1,6 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
-import {Input, Table, Divider, Button, Icon } from 'semantic-ui-react';
+import {Input, Table, Divider, Button, Icon, Label } from 'semantic-ui-react';
 import { Element } from 'react-scroll';
 import PropTypes from 'prop-types';
 
@@ -22,14 +22,17 @@ class ViewRecipe extends React.Component {
 
             <h1 style={{float: "left"}}>{r.name}</h1>
             <Button circular icon="arrow left" style={{float: "right"}} onClick={() => this.props.change("book")}></Button>
-        
             <Input disabled style={{float:"clear", width: "100%"}} />
             <p style={{float: "clear", width: "100%"}}>Time (Hours:Minutes): {r.time} </p>
             <p>Servings: {r.servings}</p>
 
             <Divider horizontal>Ingredients</Divider>
             <ul>
-                {r.ingredients.map(i => <li>{i}</li>)}
+                {r.ingredients.map(i => <li>{i}<Icon circular color="yellow" name="minus"/></li>)}
+                {r.ingredients.map(i => <li>{i}<Icon circular color="green" name="check"/></li>)}
+                {r.ingredients.map(i => <li>{i}<Icon circular color="red" name="times"/></li>)}
+                
+                
             </ul>
             <Divider horizontal>Directions</Divider>
             <ol>

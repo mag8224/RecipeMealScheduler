@@ -6,6 +6,7 @@ class MainPage extends React.Component {
     render() {
       return (
         <div >
+          <h4>Please Select the related tab for more information or to edit the information.</h4>
           <Grid celled> 
             <Grid.Row>
               <Grid.Column width={8}>

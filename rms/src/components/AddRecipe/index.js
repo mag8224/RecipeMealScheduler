@@ -22,7 +22,8 @@ class AddRecipe extends React.Component {
                 name: "",
                 amt: "",
                 measure: "tsp"
-            }
+            },
+            ingredientError: false,
         }
         this.changeHandler = this.changeHandler.bind(this);
         this.errorChecker = this.errorChecker.bind(this);
@@ -33,25 +34,31 @@ class AddRecipe extends React.Component {
     }
     submitRecipe() {
         let errors = false;
+        let errorMsg = "Please check: \n"
         if (this.state.title === "") {
+            errorMsg += "Recipe Title\n";
             errors = true;
         }
         if(this.state.serving == 0) {
+            errorMsg += "Serving Size\n";
             errors = true;
         }
         if(this.state.time === "") {
+            errorMsg +="Total Time\n";
             errors =true;
         }
         if(this.state.ingredients.length == 0) {
+            errorMsg += "Ingredients\n";
             errors = true;
         }
         if (this.state.steps.length == 0) {
+            errorMsg += "Steps";
             errors = true;
         }
         
         
         if(!errors) {
-            alert("Saved Recipe");
+            alert("Successfully Saved Recipe");
             let r = {
                 name: this.state.title,
                 time: this.state.time,
@@ -66,7 +73,7 @@ class AddRecipe extends React.Component {
 
         }
         else{
-            alert("Recipe can not be saved");
+            alert("Recipe can not be saved\n" + errorMsg );
         }
     }
     displaySteps() {
@@ -131,7 +138,7 @@ class AddRecipe extends React.Component {
                 <Input disabled style={{float: "clear", width: "100%"}} />
                 <Input style={{padding: "10px"}} name="title" label="Title" placeholder="Recipe Title" onChange={this.changeHandler}></Input>
                 <Input style={{padding: "10px"}} name="serving" label="Serving Size" type="number" onChange={this.changeHandler}></Input>
-                <Input error={this.state.timeError} style={{padding: "10px"}} label="Time" name="time" placeholder="HH:MM" onChange={this.changeHandler}></Input>
+                <Input error={this.state.timeError} style={{padding: "10px"}} label="Total Time" name="time" placeholder="HH:MM" onChange={this.changeHandler}></Input>
             </div>
             <div>
                 {/**Ingredients */}
@@ -144,7 +151,13 @@ class AddRecipe extends React.Component {
                     <Table.Body>
                         <Table.Row>
                             <Table.Cell>
-                            <Input ref="amount" type="number"  onChange={(e) => {
+                            <Input placeholder="Ingredient"  onChange={(e) => {
+                                    let tmp = this.state.tmpIng;
+                                    tmp.name=e.target.value;
+                                    this.setState({tmpIng: tmp});
+                                }} >
+                            <input/>
+                            <Input ref="amount" placeholder="Amount" type="number" error={this.state.ingredientError} onChange={(e) => {
                                 let tmp = this.state.tmpIng;
                                 tmp.amt=e.target.value;
                                 this.setState({tmpIng: tmp});
@@ -155,6 +168,7 @@ class AddRecipe extends React.Component {
                                 tmp.measure=e.target.value;
                                 this.setState({tmpIng: tmp});
                               }}>
+                                <option value=" "></option>
                                 <option value="tsp">tsp</option>
                                 <option value="Tbsp">Tbsp</option>
                                 <option value="C">C</option>
@@ -164,21 +178,16 @@ class AddRecipe extends React.Component {
                                 <option value="kg">kg</option>
                             </select>
                             </Input>
-                            </Table.Cell>
-                          
-                            <Table.Cell>
                                 
-                            <Input placeholder="Ingredient"  onChange={(e) => {
-                                    let tmp = this.state.tmpIng;
-                                    tmp.name=e.target.value;
-                                    this.setState({tmpIng: tmp});
-                                }} >
-                            <input />
+                            
                             <Button onClick={() => {
-                                console.log(this.state.ingredients, this.state.tmpIng);
+                                if(this.state.tmpIng.amt == "") {
+                                    this.setState({ingredientError: true});
+                                } else {
                                 let tmpArray = this.state.ingredients;
                                 tmpArray.push(this.state.tmpIng);          
                                 this.setState({ingredients: tmpArray, tmpIng: {amt: "", measure: "tsp", name: ""}});
+                                }
                             }}>Add</Button>
                             </Input>
                             </Table.Cell>
@@ -197,14 +206,14 @@ class AddRecipe extends React.Component {
                     </Table.Header>
                     <Table.Body>
                         <Table.Row>
-                            {/**Add some kind of action here */}
                             <Table.Cell><Input style={{width:"100%"}} name="step" placeholder="Add a Step" onChange={this.changeHandler}>
                             <input />
                             <Button onClick={() => {
+                                if(this.state.step != "") {
                                 let tmpArray = this.state.steps.slice();
                                 tmpArray.push(this.state.step);
                                 this.setState({steps: tmpArray, step: ""});
-                                
+                                }
                             }}>Add</Button>
                             </Input> </Table.Cell>
                         </Table.Row>
