@@ -24,6 +24,8 @@ class NavBar extends React.Component {
           <Menu.Item active={this.state.tab === "calendar"} name="Calendar" onClick={() => { this.setState({tab:"calendar"}); this.props.change("calendar")}}></Menu.Item>
           <Menu.Item active={this.state.tab === "pantry"} name="Pantry" onClick={() =>{ this.setState({tab:"pantry"}); this.props.change("pantry")}}></Menu.Item>
           <Menu.Item active={this.state.tab === "recipe"} name="Recipe" onClick={() => { this.setState({tab:"recipe"}); this.props.change("recipe")}}></Menu.Item>
+          <Menu.Item active={this.state.tab === "grocery"} name="Grocery" onClick={() => { this.setState({tab:"grocery"}); this.props.change("grocery")}}></Menu.Item>
+          
           </Menu>
         </div>
       );
