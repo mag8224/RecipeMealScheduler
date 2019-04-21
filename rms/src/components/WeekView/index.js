@@ -44,7 +44,7 @@ class WeekView extends React.Component {
       <div class="Calendar">
         <div class="Calendar-nav">
           <Button>Previous</Button>
-          <span>March 24-31</span>
+          <span>April 22-28</span>
           <Button>Next</Button>
         </div>
         <div class="Week-view">{days}</div>
