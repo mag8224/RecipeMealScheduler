@@ -155,6 +155,7 @@ class AddRecipe extends React.Component {
                                 tmp.measure=e.target.value;
                                 this.setState({tmpIng: tmp});
                               }}>
+                                <option value=" "></option>
                                 <option value="tsp">tsp</option>
                                 <option value="Tbsp">Tbsp</option>
                                 <option value="C">C</option>

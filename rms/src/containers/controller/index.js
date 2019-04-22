@@ -5,6 +5,7 @@ import MainPage from '../mainpage';
 import Recipe from '../Recipe';
 import Calendar from '../Calendar';
 import Pantry from '../Pantry';
+import Grocery from '../Grocery';
 
 
 class Controller extends React.Component {
@@ -27,6 +28,9 @@ class Controller extends React.Component {
         else if(this.state.s ==="recipe") {
             console.log("recipe if statement");
             return <Recipe></Recipe>;
+        }
+        else if(this.state.s === "grocery") {
+            return <Grocery></Grocery>
         }
         else {
             return <MainPage></MainPage>;
