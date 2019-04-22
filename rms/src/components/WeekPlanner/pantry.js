@@ -37,17 +37,17 @@ class PantryPlanner extends React.Component {
       );
     });
     return (
-      <div class="PantryPlanner">
-        <div class="PantryPlanner-form">
-          <span>Add item to Pantry</span>
-          <div class="PantryPlanner-form-inputs">
+      <div class="Planner">
+        <div class="Planner-form">
+          <span class="Planner-form-label">Add item to Pantry</span>
+          <div class="Planner-form-inputs">
             <Input onChange={this.handleName.bind(this)} placeholder="Ingredient Name" value={this.state.form.name}></Input>
             <Input onChange={this.handleCount.bind(this)} type="number" value={this.state.form.count}></Input>
             <Input onChange={this.handleUnits.bind(this)} placeholder="Units" value={this.state.form.units}></Input>
           </div>
           <Button>Add to Pantry</Button>
         </div>
-        <div class="PantryPlanner-list">
+        <div class="Planner-list">
           {items}
         </div>
       </div>

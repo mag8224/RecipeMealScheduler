@@ -27,11 +27,11 @@ class MealItem extends React.Component {
 
   render() {
     return(
-      <div class="MealPlanner-item">
-        <img class="MealPlanner-item-img" src={this.props.recipe.img}/>
-        <span class="MealPlanner-item-name">{this.props.recipe.name}</span>
-        <Input value={this.state.label} onChange={this.handleLabel.bind(this)} class="MealPlanner-item-label" placeholder="Label (e.g. Lunch or Snack)"></Input>
-        <select value={this.state.day} onChange={this.handleDay.bind(this)} class="MealPlanner-item-day">
+      <div class="Planner-item">
+        <img class="Planner-item-img" src={this.props.recipe.img}/>
+        <span class="Planner-item-name">{this.props.recipe.name}</span>
+        <Input value={this.state.label} onChange={this.handleLabel.bind(this)} class="Planner-item-label" placeholder="Label (e.g. Lunch or Snack)"></Input>
+        <select value={this.state.day} onChange={this.handleDay.bind(this)} class="Planner-item-day">
           <option>Monday</option>
           <option>Tuesday</option>
           <option>Wednesday</option>

@@ -15,17 +15,23 @@ code {
 /* CALENDAR PAGE STYLES */
 
 .Calendar {
-  border: 2px solid black;
+  background-color: #00b5ad;
+  border-radius: 0.28571429rem;
+  color: white;
+  margin-bottom: 72px;
 }
 .Calendar-nav {
   align-items: center;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   padding: 12px;
 }
 .Calendar-nav button {
-  margin: 0;
+  color: white !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  margin: 0 !important;
+  width: 200px;
 }
 
 .Week-view {
@@ -40,30 +46,45 @@ code {
 .Week-day h2 {
   margin: 0;
   font-size: 18px;
-  border-bottom: 2px solid black;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .Week-day + .Week-day {
-  border-left: 2px solid black;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+.Week-planner h2 {
+  margin-top: 72px;
 }
 .Week-entry {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 56px;
+  padding: 8px;
 }
 .Week-entry-portion {
+  align-items: stretch;
   margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Week-entry-portion span {
+  text-align: left;
 }
 .Week-entry + .Week-entry {
-  border-top: 2px solid black;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-.Week-entry:not(:hover) {
-  height: 40px;
-  background-color: lightgrey;
+.Week-entry:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: auto;
 }
 .Week-entry button {
   margin: 8px 0 0 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  color: white !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
 }
 .Week-entry input {
   width: 60px;
@@ -72,75 +93,65 @@ code {
   margin: 0;
 }
 
-.PantryPlanner-form {
+.Planner {
+  background-color: #00b5ad;
+  border-radius: 0.28571429rem;
+  color: white;
+  margin-bottom: 32px;
+}
+.Planner button {
+  color: white !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  margin: 0 !important;
+}
+.Planner .ui.input {
+  margin-right: 16px;
+}
+.Planner select {
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background: #fff;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0.28571429rem;
+  height: 38px;
+}
+.Planner input {
+  width: 150px;
+}
+.Planner input[type=number] {
+  width: 65px;
+}
+.Planner-form {
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);
   display: flex;
+  padding: 8px 16px;
 }
-.PantryPlanner-form-inputs {
-  display: flex;
-}
-.PantryPlanner-list {
-  border: 2px solid black;
-}
-.PantryPlanner-item {
-  display: flex;
-  align-items: center;
-}
-.PantryPlanner-item-name {
+.Planner-form-label {
+  font-weight: bold;
   margin-right: auto;
 }
-.PantryPlanner-item + .PantryPlanner-item {
-  border-top: 2px solid black;
-}
-
-.RecipePlanner-list {
-  border: 2px solid black;
-}
-.RecipePlanner-item {
+.Planner-form-inputs {
   display: flex;
+}
+.Planner-form-on {
+  align-self: center;
+  margin-right: 16px;
+}
+.Planner-form-select {
+  margin-right: 16px;
+}
+.Planner-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  padding: 8px 16px;
   align-items: center;
 }
-.RecipePlanner-item-name {
+.Planner-item-name {
   margin-right: auto;
 }
-.RecipePlanner-item + .RecipePlanner-item {
-  border-top: 2px solid black;
-}
-
-.MealPlanner-list {
-  border: 2px solid black;
-}
-.MealPlanner-item {
-  display: flex;
-  align-items: center;
-}
-.MealPlanner-item-name {
+.Planner-item-destination {
   margin-right: auto;
-}
-.MealPlanner-item + .MealPlanner-item {
-  border-top: 2px solid black;
-}
-
-.ShoppingPlanner-form {
-  align-items: center;
-  display: flex;
-}
-.ShoppingPlanner-form-inputs {
-  align-items: baseline;
-  display: flex;
-}
-.ShoppingPlanner-list {
-  border: 2px solid black;
-}
-.ShoppingPlanner-item {
-  display: flex;
-  align-items: center;
-}
-.ShoppingPlanner-item-destination {
-  margin-right: auto;
-}
-.ShoppingPlanner-item + .ShoppingPlanner-item {
-  border-top: 2px solid black;
 }
 
 /* END */

@@ -19,10 +19,10 @@ class PantryItem extends React.Component {
 
   render() {
     return (
-      <div class="PantryPlanner-item">
-        <span class="PantryPlanner-item-name">{this.props.itemName}</span>
-        <Input type="number" value={this.state.count} onChange={this.handleChange.bind(this)} class="PantryPanner-item-count"/>
-        <span class="PantryPlanner-item-units">{this.props.units}</span>
+      <div class="Planner-item">
+        <span class="Planner-item-name">{this.props.itemName}</span>
+        <Input type="number" value={this.state.count} onChange={this.handleChange.bind(this)} class="Panner-item-count"/>
+        <span class="Planner-item-units">{this.props.units}</span>
       </div>
     );
   }
