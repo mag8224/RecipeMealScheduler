@@ -17,7 +17,6 @@ class Controller extends React.Component {
         this.displayPage = this.displayPage.bind(this);
     }
     displayPage() {
-        console.log(this.state, "display page");
 
         if(this.state.s === "calendar"){
             return <Calendar></Calendar>;
