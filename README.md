@@ -23,13 +23,11 @@ Clicking on the Shopping List button brings you to the shopping list for this we
 
 If you have not made a meal plan for a week, the calendar wil display a message instructing you to follow steps to create a plan. 
 
-Step one is to update your pantry. Using the controls at the top of the widget you can add items, or edit items using the input beside an existing item. This list is prepopulated from the pantry section, any changes made here will be reflected in the pantry page. In the prototype, the two are not connected.
+Step one is to add meals to your meal plan. You have the option to add suggested recipes or search your recipe book for them. You add recipes to the plan by clikcing the button next to each item. Adding an item adds it to the list in the next step.
 
-Step two is to add meals to your meal plan. You have the option to add suggested recipes or search your recipe book for them. You add recipes to the plan by clikcing the button next to each item. Adding an item adds it to the list in the next step.
+Step two is to organize your meal plan. You can use the controls beside each item to add labels and choose which day to plan them for.
 
-Step three is to organize your meal plan. You can use the controls beside each item to add labels and choose which day to plan them for.
-
-Step four is to add shopping trips your meal plan. Using the controls at the top of the widget you can add items, or edit items using the inputs beside an already added item.
+Step three is to add shopping trips your meal plan. Using the controls at the top of the widget you can add items, or edit items using the inputs beside an already added item.
 
 You can finalize the plan by clicking the button at the bottom of the page. In the prototype this doesn't do anything.
 
