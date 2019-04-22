@@ -13,22 +13,24 @@ class QuickAddItem extends React.Component {
   }
 
   render() {
-    return(<div>
-      <img src={this.props.recipe.img}/>
-      <span>{this.props.recipe.name}</span>
-      <Input placeholder="Label (e.g. Lunch or Snack)"></Input>
-      <select>
-        <option>Monday</option>
-        <option>Tuesday</option>
-        <option>Wednesday</option>
-        <option>Thursday</option>
-        <option>Friday</option>
-        <option>Saturday</option>
-        <option>Sunday</option>
-      </select>
-      <Input type="checkbox"></Input>
-      <label>Add to Planner</label>
-    </div>);
+    return(
+      <div class="Planner-item">
+        <img class="Planner-item-img" src={this.props.recipe.img}/>
+        <span class="Planner-item-name">{this.props.recipe.name}</span>
+        <Input class="Planner-item-label" placeholder="Label (e.g. Lunch or Snack)"></Input>
+        <select class="Planner-item-day">
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thursday</option>
+          <option>Friday</option>
+          <option>Saturday</option>
+          <option>Sunday</option>
+        </select>
+        <Input type="checkbox"></Input>
+        <label>Add to Planner</label>
+      </div>
+    );
   }
 }
 

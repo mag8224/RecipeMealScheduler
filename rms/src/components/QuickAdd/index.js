@@ -27,7 +27,9 @@ class QuickAdd extends React.Component {
     return (
       <div>
         <h2>Quickly Add Suggested Recipes</h2>
-        {items}
+        <div class="Planner">
+          {items}
+        </div>
         <Button>Add selected recipes</Button>
       </div>
     );

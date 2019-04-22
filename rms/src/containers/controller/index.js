@@ -40,10 +40,12 @@ class Controller extends React.Component {
         <div name="controllerContainer">
             {/* This is the controller container, this holds the logic behind which container is being shown*/}
           <NavBar change={(sc) => this.setState({s: sc})}/>
-            {this.displayPage()}
+            <div class="Margins">
+              {this.displayPage()}
+            </div>
         </div>
       );
     }
   }
-  
+
 export default Controller;
