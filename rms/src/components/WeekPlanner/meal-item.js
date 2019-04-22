@@ -17,6 +17,8 @@ class MealItem extends React.Component {
 
   handleDay(event) {
     this.setState({day: event.target.value});
+    alert("Your Meal has been planned for " + event.target.value);
+
   }
 
   handleLabel(event) {

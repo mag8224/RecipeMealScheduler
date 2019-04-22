@@ -30,6 +30,7 @@ class RecipeBookPage extends React.Component {
     super(props);
     this.state = {
       recipes: this.props.recipes,
+      recipeView: false,
     }
     this.resultsRecipeTable = this.resultsRecipeTable.bind(this);
     this.allRecipes = this.allRecipes.bind(this);
@@ -51,7 +52,7 @@ class RecipeBookPage extends React.Component {
       </Table>);
 
     let recipeTable = ( 
-      <Table inverted color="teal">
+      <Table inverted color="teal"  >
         {this.state.recipes.map(r => {
         if (r.category === category) {
           return (
@@ -93,13 +94,13 @@ class RecipeBookPage extends React.Component {
                   {this.resultsRecipeTable()}
                 </Table.Row>
               </Table>
-              <Divider horizontal>Recipes</Divider>
+              <Divider horizontal onClick={ () => this.setState({recipeView:true})}>Recipes</Divider>
               <Element style={{
                 position: 'relative',
             height: '400px',
             overflow: 'scroll',
             }}>
-              {this.allRecipes()}
+              {this.state.recipeView ? this.allRecipes() : ""}
               </Element>
             </div>
         </div>

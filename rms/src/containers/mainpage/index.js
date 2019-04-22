@@ -124,7 +124,13 @@ class MainPage extends React.Component {
               </Grid.Column>
               <Grid.Column width={8}>
               <h4>Pantry</h4>
+              <Table color="teal" inverted>
               
+                  <Table.Row><Table.Cell>Strawberries</Table.Cell></Table.Row>
+                  <Table.Row><Table.Cell>Potatoes</Table.Cell></Table.Row>
+                  <Table.Row><Table.Cell>Eggs</Table.Cell></Table.Row>
+                  
+              </Table>
               </Grid.Column>
             </Grid.Row>
           </Grid>

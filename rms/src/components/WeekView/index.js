@@ -1,9 +1,7 @@
 import React from 'react';
 import WeekEntry from './entry.js';
 //import ReactDOM from 'react-dom';
-import { Table, Input, List,  TextArea, Button } from 'semantic-ui-react';
-
-
+import { Button } from 'semantic-ui-react';
 
 class WeekView extends React.Component {
   constructor(props) {
@@ -11,7 +9,7 @@ class WeekView extends React.Component {
 
     this.state = {
       week: {
-        "Monday": [{name: "TestRecipe", label: "TestLabel"}],
+        "Monday": [{name: "Scrambled Eggs", label: "Breakfast"}, {name: "Chicken Cordon Blue", label: "Dinner"}],
         "Tuesday": [],
         "Wednesday": [],
         "Thursday": [],

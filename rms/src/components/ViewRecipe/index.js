@@ -22,7 +22,9 @@ class ViewRecipe extends React.Component {
 
             <h1 style={{float: "left"}}>{r.name}</h1>
             <Button circular icon="arrow left" style={{float: "right"}} onClick={() => this.props.change("book")}></Button>
-            <Input disabled style={{float:"clear", width: "100%"}} />
+            <Button circular icon="edit" style={{float: "right"}} ></Button>
+            <Input disabled style={{float:"clear", width: "100%"}}/>
+
             <p style={{float: "clear", width: "100%"}}>Time (Hours:Minutes): {r.time} </p>
             <p>Servings: {r.servings}</p>
 
@@ -34,6 +36,7 @@ class ViewRecipe extends React.Component {
                 
                 
             </ul>
+            <p>Green Check=in Pantry   Yellow Dash=Some in Pantry    Red X = Not in Pantry</p>            
             <Divider horizontal>Directions</Divider>
             <ol>
                 {r.directions.map(s => <li>{s}</li>)}

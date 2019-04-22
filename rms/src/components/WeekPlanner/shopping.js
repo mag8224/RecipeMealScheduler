@@ -49,7 +49,7 @@ class ShoppingPlanner extends React.Component {
               <option>Sunday</option>
             </select>
           </div>
-          <Button>Add shopping trip</Button>
+          <Button onClick={ () => this.setState({items: [{destination: "Wegmans", day: "Monday"}, {destination:"Wegmans", day:"Friday"}]})}>Add shopping trip</Button>
         </div>
         <div class="ShoppingPlanner-list">
           {items}

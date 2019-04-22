@@ -17,6 +17,7 @@ class Pantry extends React.Component {
       ing: "",
       amt: "",
       unit: "",
+      category: "Misc",
     }
     this.displayProduce = this.displayProduce.bind(this);
     this.displayMeat = this.displayMeat.bind(this);
@@ -57,7 +58,33 @@ class Pantry extends React.Component {
             <Input name="ing" label="Item Name" onChange={this.handleChange}></Input>
             <Input name="amt" placeholder="Amount" type="number" onChange={this.handleChange}></Input>
             <Input name="unit" placeholder="Unit" onChange={this.handleChange}></Input>
-            <Button onClick={() =>{ newI.push(this.state.ing); alert("added new item to your pantry"); this.setState({add:"none", ing: ""})}}>Add Item</Button>
+            <Input name="category" placeholder="Category." onChange={this.handleChange} />
+
+            <Button onClick={() =>{ 
+              if(this.state.category === "Misc") {
+                newI.push(this.state.amt + " " + this.state.unit + " " + this.state.ing);  
+              }
+              else if( this.state.category === "Dairy") {
+                dairy.push(this.state.amt+ " " + this.state.unit + " " + this.state.ing);
+        
+              }
+              else if(this.state.category === "Produce") {
+                produce.push(this.state.amt+ " " + this.state.unit + " " + this.state.ing);
+
+              }
+              else if(this.state.category === "Frozen Food") {
+                frozen.push(this.state.amt+ " " + this.state.unit + " " + this.state.ing);
+              }
+              else if(this.state.category === "Meat") { 
+                meat.push(this.state.amt + " " + this.state.unit + " " + this.state.ing);
+              }
+              else {
+                newI.push(this.state.amt+ " " + this.state.unit + " " + this.state.ing);
+              }
+              alert("added new item to your pantry");
+              this.setState({add:"none", ing: "", amt: "", unit: "", category: "Misc"})}
+              
+              }>Add Item</Button>
           </div>
           <Divider horizontal style={{float:"clear", width: "100%"}}>Pantry</Divider>
           <Table color="teal" inverted style={{float:"left", width: "48%", }}>
@@ -100,7 +127,7 @@ class Pantry extends React.Component {
             </Table.Body> 
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>New Items</Table.HeaderCell>
+                <Table.HeaderCell>Misc</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>

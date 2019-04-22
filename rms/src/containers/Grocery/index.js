@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Table } from 'semantic-ui-react';
+import { Checkbox, Table, Button } from 'semantic-ui-react';
 //import ReactDOM from 'react-dom';
 
 
@@ -46,7 +46,11 @@ class Grocery extends React.Component {
             <Table.HeaderCell>Dairy</Table.HeaderCell>
             </Table.Row>
             <Table.Cell>
-                <Checkbox label="3 Eggs" disabled={this.state.dairy} onClick={() => this.setState({dairy: true})} />
+                <Checkbox label="3 Eggs" disabled={this.state.dairy} onClick={() => {
+                    prompt("How much did you buy?");
+                    this.setState({dairy: true}); 
+                }
+                    } />
             </Table.Cell>
             <Table.Row>
             <Table.HeaderCell>Frozen Food</Table.HeaderCell>
@@ -61,6 +65,7 @@ class Grocery extends React.Component {
             <Table.HeaderCell>Canned Food</Table.HeaderCell>
             </Table.Row>
          </Table>
+         <Button onClick={() => this.setState({produce: true, dairy: true})}>Finish Trip</Button>
         </div>
       );
     }
