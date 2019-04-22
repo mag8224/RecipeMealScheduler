@@ -17,7 +17,7 @@ Here you can plan means and shopping trips. The calendar at the top of the page 
 
 If you have already made a meal plan for a week, it'll be shown here. Small cards will be displayed under each day showing the planned meals and shopping trips. You can hover over each of these to view more details and make small changes. Below, there is the option to quickly add suggested recipes. In the prototype, this meal plan is fixed and no changes can be made.
 
-Clicking on the Shopping List button brings you to the shopping list for this week. In the prototype, the list is fixed, not dynamically generated.
+Clicking on the Shopping List button brings you to the shopping list for this week. In the prototype, this button does not work.
 
 ### Week is not Planned
 
@@ -40,3 +40,8 @@ The Pantry page keeps track of the ingredients in your kitchen, organized by foo
 ## Recipe Page
 
 Here your recipes are listed by category. You can search the list using the bar at them top. You can click the name of each item to view the recipe details. You can click on the buttons next to each item to edit and delete each recipe. In the prototype, these buttons don't do anything. You can add an item by clicking the button on the top of the page and filling in the form.
+
+## Grocery page
+
+Here you grocery list for the coming week is displayed for use while shopping. You can click on the check box for each item you purchase during you trip and click the "Finish Trip" button once you have completed your shopping trip. This will add each
+of the checked items to your pantry automatically. In the prototype, clicking this button does nothing.
