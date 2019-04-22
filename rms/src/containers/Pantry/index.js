@@ -15,6 +15,8 @@ class Pantry extends React.Component {
     this.state = {
       add: "none",
       ing: "",
+      amt: "",
+      unit: "",
     }
     this.displayProduce = this.displayProduce.bind(this);
     this.displayMeat = this.displayMeat.bind(this);
@@ -47,13 +49,14 @@ class Pantry extends React.Component {
   })
   }
     render() {
-
       return (
         <div >
           <h1>Currently in Your Pantry</h1>
           <Button circular positive icon="plus"onClick={() => this.setState({add:true})}></Button>
           <div style={{display:this.state.add}}>
             <Input name="ing" label="Item Name" onChange={this.handleChange}></Input>
+            <Input name="amt" placeholder="Amount" type="number" onChange={this.handleChange}></Input>
+            <Input name="unit" placeholder="Unit" onChange={this.handleChange}></Input>
             <Button onClick={() =>{ newI.push(this.state.ing); alert("added new item to your pantry"); this.setState({add:"none", ing: ""})}}>Add Item</Button>
           </div>
           <Divider horizontal style={{float:"clear", width: "100%"}}>Pantry</Divider>
@@ -98,7 +101,6 @@ class Pantry extends React.Component {
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>New Items</Table.HeaderCell>
-    
               </Table.Row>
             </Table.Header>
             <Table.Body>
